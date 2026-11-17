@@ -1,0 +1,17 @@
+# Settings (no secrets here: tokens come from the environment or the macOS Keychain).
+business_name: "Acme Help Desk"
+region: us                 # us | eu | au (your Intercom workspace's data region)
+model: claude-haiku-5-5    # one line to change (rule B10); claude-sonnet-5-5 for harder inboxes
+kb_dir: knowledge_base
+kb_top_k: 3
+db_path: data/assistant.db
+admin_id: ""               # empty = the admin who owns the access token (GET /me)
+routing_type: team         # assign to a team (or "admin")
+routing: {}                # intent -> team id, e.g. {billing: "1234567", bug: "1234568"}; empty = don't assign
+tag_prefix: "AI"
+topics: [conversation.user.created, conversation.user.replied]
+ai_disclosure: ""          # blank = the default line (rule B18); removable only by the client's written request
+ai_disclosure_removed_by_written_request: ""
+paused: false              # kill switch: true stops all AI calls and all writes to Intercom
+max_customer_chars: 4000
+max_drafts_per_day: 500

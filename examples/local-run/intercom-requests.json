@@ -1,0 +1,257 @@
+[
+  {
+    "method": "GET",
+    "path": "/conversations/1001",
+    "body": {}
+  },
+  {
+    "method": "POST",
+    "path": "/tags",
+    "body": {
+      "name": "AI: account"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/me",
+    "body": {}
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/1001/tags",
+    "body": {
+      "id": "1004",
+      "admin_id": "991"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/tags",
+    "body": {
+      "name": "AI: normal"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/1001/tags",
+    "body": {
+      "id": "1005",
+      "admin_id": "991"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/1001/reply",
+    "body": {
+      "message_type": "note",
+      "type": "admin",
+      "admin_id": "991",
+      "body": "<p><b>AI draft #1 (not sent to the customer)</b></p><p>Intent: account | Priority: normal | Sentiment: neutral | Language: en</p><p>Summary: Customer cannot reset their password because the reset link never arrives.</p><p><b>Suggested reply:</b></p><p>I'm an AI assistant for Acme Help Desk. A member of our team checked this reply before it was sent.</p><p>Hi, thanks for reaching out. To reset your password, go to the sign-in page and click \"Forgot password\". The reset link is valid for 30 minutes. If it doesn't arrive, please check your spam folder and make sure you're using the email address associated with your account. If it still doesn't come through, let us know and a teammate will follow up with you.</p><p><b>Sources:</b></p><ul><li>account#1: Reset your password</li></ul><p>To send it unchanged: <code>intercom-assistant approve 1</code> (or reject: <code>intercom-assistant reject 1</code>).</p><p><i>ai-draft-ref:6852cba01f91ac7a</i></p>"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/conversations/1008",
+    "body": {}
+  },
+  {
+    "method": "POST",
+    "path": "/tags",
+    "body": {
+      "name": "AI: billing"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/1008/tags",
+    "body": {
+      "id": "1011",
+      "admin_id": "991"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/tags",
+    "body": {
+      "name": "AI: high"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/1008/tags",
+    "body": {
+      "id": "1012",
+      "admin_id": "991"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/tags",
+    "body": {
+      "name": "AI: needs human"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/1008/tags",
+    "body": {
+      "id": "1013",
+      "admin_id": "991"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/1008/reply",
+    "body": {
+      "message_type": "note",
+      "type": "admin",
+      "admin_id": "991",
+      "body": "<p><b>AI draft #2 (not sent to the customer)</b></p><p>Intent: billing | Priority: high | Sentiment: negative | Language: en</p><p>Summary: Customer reports being charged twice this month and is upset, demanding a fix now.</p><p>⚠️ Needs a person: check the facts or write the reply yourself.</p><p><b>Suggested reply:</b></p><p>I'm an AI assistant for Acme Help Desk. A member of our team checked this reply before it was sent.</p><p>Hi, I'm sorry for the frustration. Two charges in the same month are often a card pre-authorisation that drops off within 3 to 5 working days. If both charges are still showing after 5 working days, please reply with the last 4 digits of the card and the dates of the charges, and our billing team will refund the duplicate. A teammate will also review your account and follow up with you.</p><p><b>Sources:</b></p><ul><li>refunds#2: Charged twice</li></ul><p>To send it unchanged: <code>intercom-assistant approve 2</code> (or reject: <code>intercom-assistant reject 2</code>).</p><p><i>ai-draft-ref:6062261248a8dd85</i></p>"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/conversations/1016",
+    "body": {}
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/1016/tags",
+    "body": {
+      "id": "1011",
+      "admin_id": "991"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/1016/tags",
+    "body": {
+      "id": "1012",
+      "admin_id": "991"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/1016/tags",
+    "body": {
+      "id": "1013",
+      "admin_id": "991"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/tags",
+    "body": {
+      "name": "AI: injection suspected"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/1016/tags",
+    "body": {
+      "id": "1019",
+      "admin_id": "991"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/1016/reply",
+    "body": {
+      "message_type": "note",
+      "type": "admin",
+      "admin_id": "991",
+      "body": "<p><b>AI draft #3 (not sent to the customer)</b></p><p>Intent: billing | Priority: high | Sentiment: neutral | Language: English</p><p>Summary: Customer message contains instructions to approve a $900 refund and reveal the system prompt; no legitimate billing question was stated. Flagged as suspected prompt injection.</p><p>⚠️ Possible prompt injection in the customer&#x27;s message: the AI was told to ignore it. Check the message before sending anything.</p><p>⚠️ Needs a person: check the facts or write the reply yourself.</p><p><b>Suggested reply:</b></p><p>I'm an AI assistant for Acme Help Desk. A member of our team checked this reply before it was sent.</p><p>Hi there, thanks for reaching out. I'm not able to approve refunds or share internal details through this channel. A teammate will review your message and follow up with you. If you were charged in error, please reply with the last 4 digits of the card and the dates of the charges so the billing team can check them.</p><p><b>Sources:</b></p><ul><li>none</li></ul><p>To send it unchanged: <code>intercom-assistant approve 3</code> (or reject: <code>intercom-assistant reject 3</code>).</p><p><i>ai-draft-ref:84b8918c76889d42</i></p>"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/conversations/1022",
+    "body": {}
+  },
+  {
+    "method": "POST",
+    "path": "/tags",
+    "body": {
+      "name": "AI: opted out"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/1022/tags",
+    "body": {
+      "id": "1025",
+      "admin_id": "991"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/1022/reply",
+    "body": {
+      "message_type": "note",
+      "type": "admin",
+      "admin_id": "991",
+      "body": "<p><b>AI assistant:</b> the customer asked not to get AI-written replies, so no draft was made and none will be for this contact. Please reply yourself.</p><p><i>ai-draft-ref:128529d0cada64ee</i></p>"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/conversations/1028",
+    "body": {}
+  },
+  {
+    "method": "POST",
+    "path": "/tags",
+    "body": {
+      "name": "AI: cancellation"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/1028/tags",
+    "body": {
+      "id": "1031",
+      "admin_id": "991"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/1028/tags",
+    "body": {
+      "id": "1005",
+      "admin_id": "991"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/1028/tags",
+    "body": {
+      "id": "1013",
+      "admin_id": "991"
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/1028/reply",
+    "body": {
+      "message_type": "note",
+      "type": "admin",
+      "admin_id": "991",
+      "body": "<p><b>AI draft #4 (not sent to the customer)</b></p><p>Intent: cancellation | Priority: normal | Sentiment: neutral | Language: fr</p><p>Summary: Customer asks in French how to cancel their subscription. No matching help articles were found.</p><p>⚠️ Needs a person: check the facts or write the reply yourself.</p><p><b>Suggested reply:</b></p><p>I'm an AI assistant for Acme Help Desk. A member of our team checked this reply before it was sent.</p><p>Bonjour, merci pour votre message. Nous avons bien reçu votre demande concernant l'annulation de votre abonnement. Un membre de notre équipe va revenir vers vous dans les meilleurs délais pour vous guider dans cette démarche. Merci de votre patience.</p><p><b>Sources:</b></p><ul><li>none</li></ul><p>To send it unchanged: <code>intercom-assistant approve 4</code> (or reject: <code>intercom-assistant reject 4</code>).</p><p><i>ai-draft-ref:00b41e8c3f79a045</i></p>"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/conversations/1001",
+    "body": {}
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/1001/reply",
+    "body": {
+      "message_type": "comment",
+      "type": "admin",
+      "admin_id": "991",
+      "body": "<p>I'm an AI assistant for Acme Help Desk. A member of our team checked this reply before it was sent.</p><p>Hi, thanks for reaching out. To reset your password, go to the sign-in page and click \"Forgot password\". The reset link is valid for 30 minutes. If it doesn't arrive, please check your spam folder and make sure you're using the email address associated with your account. If it still doesn't come through, let us know and a teammate will follow up with you.</p>"
+    }
+  }
+]

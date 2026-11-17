@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "intercom-ai-support-assistant"
+version = "0.1.0"
+description = "AI layer for an Intercom support team: signed webhooks, Claude triage (intent, priority, sentiment), tags and assignment, a cited draft reply as an internal note, and a human approval step before anything reaches the customer."
+requires-python = ">=3.10"
+license = {text = "MIT"}
+dependencies = [
+  "anthropic==2.9.0",
+  "fastapi==0.163.1",
+  "uvicorn==0.54.0",
+  "httpx==0.28.1",
+  "PyYAML==6.0.3",
+]
+
+[project.scripts]
+intercom-assistant = "intercom_assistant.cli:main"
+
+[tool.setuptools]
+packages = ["intercom_assistant"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+timeout = 60
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+ignore = ["E501"]
