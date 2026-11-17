@@ -70,7 +70,8 @@ class FakeIntercom:
         return [p for p in self._parts(conv_id) if p["part_type"] == "note"]
 
     def replies(self, conv_id: str) -> list[dict]:
-        return [p for p in self._parts(conv_id) if p["part_type"] == "comment" and p["author"]["type"] == "admin"]
+        return [p for p in self._parts(conv_id) if p["part_type"] in ("comment", "assignment")
+                and p["author"]["type"] == "admin" and p.get("body")]
 
     def tag_names(self, conv_id: str) -> list[str]:
         return [t["name"] for t in self.conversations[conv_id]["tags"]["tags"]]
@@ -162,6 +163,11 @@ class FakeIntercom:
                 if body.get("type") != "admin" or mt not in ("note", "comment") or not body.get("body") \
                         or body.get("admin_id") != ADMIN["id"]:
                     return self._error(400, "parameter_invalid", "bad reply")
+                if mt == "comment" and not conv["admin_assignee_id"] and not conv["team_assignee_id"]:
+                    # As seen live (API 2.18): replying to an unassigned conversation assigns it to the
+                    # replier, and the reply is stored as an "assignment" part carrying the body.
+                    conv["admin_assignee_id"] = body["admin_id"]
+                    mt = "assignment"
                 self._add_part(seg[1], mt, body["body"], {"type": "admin", "id": body["admin_id"]})
                 return httpx.Response(200, json=conv)
             if len(seg) == 3 and seg[2] == "parts" and m == "POST":

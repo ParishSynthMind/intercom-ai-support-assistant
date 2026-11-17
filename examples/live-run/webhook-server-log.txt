@@ -1,0 +1,17 @@
+HTTP Request: GET https://api.intercom.io/conversations/215476885921042?display_as=plaintext "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.intercom.io/tags "HTTP/1.1 200 OK"
+HTTP Request: GET https://api.intercom.io/me "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.intercom.io/conversations/215476885921042/tags "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.intercom.io/tags "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.intercom.io/conversations/215476885921042/tags "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.intercom.io/conversations/215476885921042/reply "HTTP/1.1 200 OK"
+{"citations": 1, "conversation_id": "[number]", "draft_id": 1, "event": "drafted", "injection": false, "intent": "billing", "needs_human": false, "priority": "high"}
+HTTP Request: GET https://api.intercom.io/conversations/215476885921042?display_as=plaintext "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.intercom.io/conversations/215476885921042/tags "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.intercom.io/conversations/215476885921042/tags "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.intercom.io/tags "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.intercom.io/conversations/215476885921042/tags "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.intercom.io/conversations/215476885921042/reply "HTTP/1.1 200 OK"
+{"citations": 1, "conversation_id": "[number]", "draft_id": 2, "event": "drafted", "injection": false, "intent": "billing", "needs_human": true, "priority": "high"}

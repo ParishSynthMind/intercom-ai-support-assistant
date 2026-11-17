@@ -1,0 +1,28 @@
+{
+  "conversation_id": "215476885921042",
+  "tags": [
+    "AI: billing",
+    "AI: high",
+    "AI: needs human"
+  ],
+  "notes": [
+    "AI draft #1 (not sent to the customer) \n Intent: billing | Priority: high | Sentiment: neutral | Language: en \n Summary: Customer reports being charged twice for the current month and asks for help. \n Suggested reply: \n I'm an AI assistant for Acme Help Desk. A member of our team checked this reply before it was sent. \n Hi there, thanks for reaching out and sorry for the trouble. Two charges in the same month is often a card pre-authorisation that drops off within 3 to 5 working days. If both charges are still showing after 5 working days, please reply with the last 4 digits of the card used and the dates of the two charges, and our billing team will refund the duplicate. A teammate will also follow up with you shortly. \n Sources: \n - refunds#2: Charged twice \n To send it unchanged: \n intercom-assistant approve 1 \n (or reject: \n intercom-assistant reject 1 \n ). \n ai-draft-ref:4da1606dd57afd8c",
+    "AI draft #2 (not sent to the customer) \n Intent: billing | Priority: high | Sentiment: negative | Language: en \n Summary: Customer reports being charged twice this month and asks where to download invoices. \n ⚠️ Needs a person: check the facts or write the reply yourself. \n Suggested reply: \n I'm an AI assistant for Acme Help Desk. A member of our team checked this reply before it was sent. \n Hi, sorry to hear you were charged twice this month. I've passed the duplicate charge to a teammate, who will follow up with you on it. For invoices, you can find them in Settings &gt; Billing &gt; Invoices. There you can also add your VAT number and company address; new invoices will show them, while older invoices are not re-issued. \n Sources: \n - refunds#3: Invoices \n To send it unchanged: \n intercom-assistant approve 2 \n (or reject: \n intercom-assistant reject 2 \n ). \n ai-draft-ref:c65cd6237f740c48"
+  ],
+  "part_types": [
+    "assignment_not_actioned",
+    "conversation_attribute_updated_by_admin",
+    "conversation_tags_updated",
+    "conversation_tags_updated",
+    "note",
+    "comment",
+    "conversation_tags_updated",
+    "note"
+  ],
+  "log": [
+    "15:50:23 customer opened conversation 215476885921042 (REST API, as the contact)",
+    "15:50:32 note 1 present: True (after 9.5s, via webhook conversation.user.created)",
+    "15:50:33 customer replied in the conversation (REST API, as the contact)",
+    "15:50:43 note 2 present: True (after 10.5s, via webhook conversation.user.replied)"
+  ]
+}

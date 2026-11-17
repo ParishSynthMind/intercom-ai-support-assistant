@@ -1,0 +1,172 @@
+[
+  {
+    "method": "GET",
+    "path": "/me",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/contacts",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/conversations",
+    "status": 200
+  },
+  {
+    "method": "GET",
+    "path": "/conversations/215476885899524",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/tags",
+    "status": 200
+  },
+  {
+    "method": "GET",
+    "path": "/me",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/215476885899524/tags",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/tags",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/215476885899524/tags",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/215476885899524/reply",
+    "status": 200
+  },
+  {
+    "method": "GET",
+    "path": "/conversations/215476885899524",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/215476885899524/reply",
+    "status": 200
+  },
+  {
+    "method": "GET",
+    "path": "/conversations/215476885899524",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/contacts",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/conversations",
+    "status": 200
+  },
+  {
+    "method": "GET",
+    "path": "/conversations/215476885901053",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/tags",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/215476885901053/tags",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/215476885901053/tags",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/tags",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/215476885901053/tags",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/tags",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/215476885901053/tags",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/215476885901053/reply",
+    "status": 200
+  },
+  {
+    "method": "GET",
+    "path": "/conversations/215476885901053",
+    "status": 200
+  },
+  {
+    "method": "GET",
+    "path": "/conversations/215476885901053",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/contacts",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/conversations",
+    "status": 200
+  },
+  {
+    "method": "GET",
+    "path": "/conversations/215476885903160",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/tags",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/215476885903160/tags",
+    "status": 200
+  },
+  {
+    "method": "POST",
+    "path": "/conversations/215476885903160/reply",
+    "status": 200
+  },
+  {
+    "method": "GET",
+    "path": "/conversations/215476885903160",
+    "status": 200
+  },
+  {
+    "method": "GET",
+    "path": "/conversations/215476885903160",
+    "status": 200
+  }
+]

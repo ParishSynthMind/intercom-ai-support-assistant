@@ -1,0 +1,12 @@
+2026-11-17 15:46:34 +0400 GET /me -> admin 12135086 (Intercom-Version 2.18)
+POST /contacts -> 6afc3e9aef156208c328b24d; POST /conversations -> conversation 215476885899524
+handle_conversation(215476885899524) -> drafted, draft 1
+rerun -> duplicate (no second note)
+approve draft 1 -> sent
+approve again -> already_sent (nothing sent twice)
+POST /contacts -> 6afc3ea9b143d61d4a31f695; POST /conversations -> conversation 215476885901053
+handle_conversation(215476885901053) -> drafted, draft 2
+rerun -> duplicate (no second note)
+POST /contacts -> 6afc3ebbcdf43ff59da2c1af; POST /conversations -> conversation 215476885903160
+handle_conversation(215476885903160) -> opted_out, draft None
+rerun -> duplicate (no second note)

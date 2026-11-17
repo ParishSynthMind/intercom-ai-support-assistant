@@ -9,6 +9,7 @@ from intercom_assistant.service import (
     latest_customer_message,
     marker_for,
     note_has_marker,
+    team_replies,
     transcript_of,
 )
 from intercom_assistant.store import Store
@@ -348,3 +349,22 @@ def test_note_has_marker():
 
 def test_marker_stable_and_distinct():
     assert marker_for("1:a") == marker_for("1:a") != marker_for("1:b")
+
+
+def test_admin_reply_stored_as_assignment_part_counts():
+    """Live finding: Intercom stores an admin reply on an unassigned conversation as an 'assignment' part."""
+    conv = {"source": {"body": "<p>Help</p>", "author": {"type": "user"}},
+            "conversation_parts": {"conversation_parts": [
+                {"part_type": "assignment", "body": "<p>Here is how</p>", "author": {"type": "admin"}},
+                {"part_type": "assignment", "body": None, "author": {"type": "admin"}},
+                {"part_type": "note", "body": "<p>internal</p>", "author": {"type": "admin"}}]}}
+    assert [p["body"] for p in team_replies(conv)] == ["<p>Here is how</p>"]
+    assert "Teammate: Here is how" in transcript_of(conv, 100)
+    assert "internal" not in transcript_of(conv, 100)
+
+
+def test_log_keeps_ids_but_masks_text(caplog):
+    from intercom_assistant.service import log_event
+    log_event("x", conversation_id="215476885921042", reason="mail me at a@b.co")
+    msg = caplog.records[-1].getMessage()
+    assert "215476885921042" in msg and "a@b.co" not in msg

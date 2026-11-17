@@ -19,12 +19,16 @@ log = logging.getLogger("intercom_assistant")
 
 CUSTOMER_AUTHORS = {"user", "lead", "contact"}
 CUSTOMER_PART_TYPES = {"comment", "open", "conversation"}
+# Found live (17 Nov 2026, API 2.18): an admin reply on an UNASSIGNED conversation is stored as an
+# "assignment" part that carries the reply body (Intercom assigns the conversation to the replier).
+TEAM_PART_TYPES = {"comment", "assignment", "open", "close"}
 MARKER_PREFIX = "ai-draft-ref:"
 
 
 def log_event(event: str, **fields) -> None:
     """One structured JSON line per step. Values pass through guard.redact: no personal data in logs."""
-    safe = {k: (guard.redact(v) if isinstance(v, str) else v) for k, v in fields.items()}
+    # Ids are not personal data (and long numeric ids would look like card numbers to the masker).
+    safe = {k: (guard.redact(v) if isinstance(v, str) and not k.endswith("_id") else v) for k, v in fields.items()}
     log.info(json.dumps({"event": event, **safe}, sort_keys=True))
 
 
@@ -66,13 +70,20 @@ def transcript_of(conv: dict, limit_chars: int) -> str:
         entries.append((part.get("author") or {}, part.get("body") or "", part.get("part_type") or ""))
     for author, body, part_type in entries:
         text = guard.strip_html(body)
-        if not text or part_type not in CUSTOMER_PART_TYPES:
+        if not text:
             continue
-        if author.get("type") in CUSTOMER_AUTHORS:
+        if author.get("type") in CUSTOMER_AUTHORS and part_type in CUSTOMER_PART_TYPES:
             lines.append("Customer: " + guard.fence(text, limit_chars))
-        elif author.get("type") in {"admin", "bot"}:
+        elif author.get("type") in {"admin", "bot"} and part_type in TEAM_PART_TYPES:
             lines.append(f"{'Teammate' if author.get('type') == 'admin' else 'Bot'}: {text[:limit_chars]}")
     return "\n".join(lines[-12:])
+
+
+def team_replies(conv: dict) -> list[dict]:
+    """Messages the customer can see, written by a teammate (comments, and assignment parts with a body)."""
+    return [p for p in (conv.get("conversation_parts") or {}).get("conversation_parts") or []
+            if (p.get("author") or {}).get("type") == "admin" and p.get("part_type") in TEAM_PART_TYPES
+            and guard.strip_html(p.get("body") or "")]
 
 
 def note_has_marker(conv: dict, marker: str) -> str | None:

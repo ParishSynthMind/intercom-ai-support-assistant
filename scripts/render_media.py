@@ -73,7 +73,7 @@ def note_page(step):
 
 def thumb_page():
     return ("<div class='thumb'><h2>Intercom AI<br>Support Assistant</h2>"
-            "<div class='lead'>Claude triages every conversation, tags and routes it, and drafts a cited reply "
+            "<div class='lead'>Claude triages every conversation, tags it, and drafts a cited reply "
             "as an internal note. A person approves before anything is sent.</div>"
             "<div class='chips'><span class='chip'>Signed webhooks</span><span class='chip'>Intent · priority · sentiment</span>"
             "<span class='chip'>RAG with citations</span><span class='chip'>Human approval</span>"
